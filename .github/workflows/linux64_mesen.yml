@@ -1,4 +1,4 @@
-name: px68k-libretro Linux x86_64
+name: Mesen-X-libretro Linux x86_64
 
 on:
   #push:
@@ -15,17 +15,18 @@ jobs:
     - name: Install needed packages
       run: sudo apt install wget git build-essential
     - name: Checkout source
-      run: git clone https://github.com/negativeExponent/px68k-libretro.git && cd px68k-libretro && git submodule update --init
+      run: git clone https://github.com/NovaSquirrel/Mesen-X.git && cd Mesen-X && git submodule update --init
     - name: Build libretro core
-      working-directory: px68k-libretro
+      working-directory: Mesen-X
       run: |
+        cd Libretro
         make -j8
-        wget https://raw.githubusercontent.com/libretro/libretro-super/master/retrolink.sh && chmod +x retrolink.sh && ./retrolink.sh px68k_libretro.so
-        zip -9 ../px68k_libretro.so.zip px68k_libretro.so
+        wget https://raw.githubusercontent.com/libretro/libretro-super/master/retrolink.sh && chmod +x retrolink.sh && ./retrolink.sh mesen_libretro.so
+        zip -9 ../../mesen_libretro.so.zip mesen_libretro.so
     - name: Create new release
       uses: svenstaro/upload-release-action@v2
       with:
         repo_token: ${{ secrets.GITHUB_TOKEN }}
         tag: Linux_64-bit
-        file: px68k_libretro.so.zip
+        file: mesen_libretro.so.zip
         overwrite: true
