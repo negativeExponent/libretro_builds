@@ -1,0 +1,31 @@
+name: libretro-fceumm Linux x86_64
+
+on:
+  #push:
+  workflow_dispatch:
+  watch: # this is a hack that lets repo owners trigger a build by starring
+    types: [started]
+    if: github.actor == github.event.repository.owner.login
+
+jobs:
+  Linux:
+    name: Build for Linux
+    runs-on: ubuntu-latest
+    steps:
+    - name: Install needed packages
+      run: sudo apt install wget git build-essential
+    - name: Checkout source
+      run: git clone https://github.com/negativeExponent/libretro-fceumm.git && cd libretro-fceumm && git submodule update --init
+    - name: Build libretro core
+      working-directory: libretro-fceumm
+      run: |
+        make -j8
+        wget https://raw.githubusercontent.com/libretro/libretro-super/master/retrolink.sh && chmod +x retrolink.sh && ./retrolink.sh fceumm_libretro.so
+        zip -9 ../fceumm_libretro.so.zip fceumm_libretro.so
+    - name: Create new release
+      uses: svenstaro/upload-release-action@v2
+      with:
+        repo_token: ${{ secrets.GITHUB_TOKEN }}
+        tag: Linux_64-bit
+        file: fceumm_libretro.so.zip
+        overwrite: true
