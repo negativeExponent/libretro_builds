@@ -24,9 +24,11 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: msys2/setup-msys2@v2
-      with:
-        update: true
-        install: true
+        with:
+          update: true
+          install: >-
+            base-devel
+            git
 
       - shell: msys2 {0}
         run: |
