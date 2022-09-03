@@ -1,4 +1,4 @@
-name: Mesen-X-libretro Windows x86_64
+name: Mesen-X-libretro-Msys2 Windows x86_64
 
 on:
   push:
