@@ -43,6 +43,7 @@ jobs:
             mingw-w64-x86_64-ffmpeg
             mingw-w64-x86_64-drmingw
             gcc
+            zip
 
       - shell: msys2 {0}
         run: |
