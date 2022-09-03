@@ -14,6 +14,12 @@ jobs:
     name: Build for Windows via cross-compile
     runs-on: windows-latest
     steps:
+    - uses: msys2/setup-msys2@v2
+      with:
+      update: true
+      install: >-
+        base-devel
+        git
     - shell: msys2 {0}
       run: |
         uname -a
