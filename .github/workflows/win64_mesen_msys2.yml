@@ -25,6 +25,7 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: msys2/setup-msys2@v2
         with:
+          release: false
           update: false
           install: >-
             base-devel
@@ -48,6 +49,7 @@ jobs:
 
       - shell: msys2 {0}
         run: |
+          whereis ccache
           uname -a
           gcc --version
           git clone https://github.com/NovaSquirrel/Mesen-X.git && cd Mesen-X && git submodule update --init
