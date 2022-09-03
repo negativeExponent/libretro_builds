@@ -50,4 +50,13 @@ jobs:
           gcc --version
           git clone https://github.com/NovaSquirrel/Mesen-X.git && cd Mesen-X && git submodule update --init
           cd Libretro
-          make
+          make -j8
+          strip -s mesen_libretro.dll
+          zip -9 ../../mesen_libretro.dll.zip mesen_libretro.dll
+      - name: Create new release
+        uses: svenstaro/upload-release-action@v2
+        with:
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          tag: Windows_64-bit
+          file: mesen_libretro.dll.zip
+          overwrite: true
