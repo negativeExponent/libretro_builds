@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: Mesen-X-Libretro using Msys2
+name: Mesen-X-Libretro Windows x64
 
 # Controls when the workflow will run
 on:
@@ -29,19 +29,19 @@ jobs:
           install: >-
             base-devel
             git
-            wget
-            git
+            #wget
+            #git
             make
-            mingw-w64-x86_64-toolchain
-            mingw-w64-x86_64-ntldd
-            mingw-w64-x86_64-zlib
-            mingw-w64-x86_64-pkg-config
-            mingw-w64-x86_64-SDL2
-            mingw-w64-x86_64-libxml2
-            mingw-w64-x86_64-freetype
-            mingw-w64-x86_64-python3
-            mingw-w64-x86_64-ffmpeg
-            mingw-w64-x86_64-drmingw
+            #mingw-w64-x86_64-toolchain
+            #mingw-w64-x86_64-ntldd
+            #mingw-w64-x86_64-zlib
+            #mingw-w64-x86_64-pkg-config
+            #mingw-w64-x86_64-SDL2
+            #mingw-w64-x86_64-libxml2
+            #mingw-w64-x86_64-freetype
+            #mingw-w64-x86_64-python3
+            #mingw-w64-x86_64-ffmpeg
+            #mingw-w64-x86_64-drmingw
             gcc
             zip
 
