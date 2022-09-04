@@ -32,8 +32,6 @@ jobs:
             wget
             zip
             ccache
-
-      - name: Build libretro core
       - shell: msys2 {0}
         run: |
           whereis ccache
