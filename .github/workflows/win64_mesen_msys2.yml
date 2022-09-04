@@ -29,9 +29,20 @@ jobs:
           install: >-
             base-devel
             gcc
-            git
             wget
+            git
+            make
             zip
+            mingw-w64-x86_64-toolchain
+            mingw-w64-x86_64-ntldd
+            mingw-w64-x86_64-zlib
+            mingw-w64-x86_64-pkg-config
+            mingw-w64-x86_64-SDL2
+            mingw-w64-x86_64-libxml2
+            mingw-w64-x86_64-freetype
+            mingw-w64-x86_64-python3
+            mingw-w64-x86_64-ffmpeg
+            mingw-w64-x86_64-drmingw
       - name: Build libretro core
         shell: msys2 {0}
         run: |
