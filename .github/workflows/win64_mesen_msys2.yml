@@ -28,6 +28,7 @@ jobs:
           update: false
           install: >-
             base-devel
+            gcc
             git
             wget
             zip
