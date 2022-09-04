@@ -32,13 +32,9 @@ jobs:
             git
             wget
             zip
-            ccache
-      - shell: msys2 {0}
+      - name: Build libretro core
+        shell: msys2 {0}
         run: |
-          whereis ccache
-          uname -a
-          gcc --version
-          export PATH=/usr/lib/ccache/bin:$PATH
           git clone https://github.com/NovaSquirrel/Mesen-X.git && cd Mesen-X && git submodule update --init
           cd Libretro
           make -j8
