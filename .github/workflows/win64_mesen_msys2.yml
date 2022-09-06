@@ -11,7 +11,7 @@ on:
 
 jobs:
   Windows:
-    name: Build for Windows using msys2
+    name: Build for Windows via Msys2 cross-platform
     runs-on: windows-latest
     steps:
       - uses: msys2/setup-msys2@v2
