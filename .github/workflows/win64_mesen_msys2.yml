@@ -1,8 +1,5 @@
-# This is a basic workflow to help you get started with Actions
+name: Mesen-X-libretro Windows x86_64 (Msys2)
 
-name: Mesen-X-libretro Win x86_64 (Msys2)
-
-# Controls when the workflow will run
 on:
   push:
   #schedule:
@@ -12,24 +9,17 @@ on:
     types: [started]
     if: github.actor == github.event.repository.owner.login
 
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  # This workflow contains a single job called "build"
   Windows:
     name: Build for Windows using msys2
     runs-on: windows-latest
-
-    # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: msys2/setup-msys2@v2
         with:
-          release: false
-          update: false
+          update: update
           install: >-
             base-devel
             gcc
-            wget
             git
             make
             zip
@@ -37,16 +27,13 @@ jobs:
             mingw-w64-x86_64-ntldd
             mingw-w64-x86_64-zlib
             mingw-w64-x86_64-pkg-config
-            mingw-w64-x86_64-SDL2
-            mingw-w64-x86_64-libxml2
-            mingw-w64-x86_64-freetype
-            mingw-w64-x86_64-python3
-            mingw-w64-x86_64-ffmpeg
-            mingw-w64-x86_64-drmingw
+      - uses: actions/checkout@v2
+      - name: Checkout source
+        run: git clone https://github.com/NovaSquirrel/Mesen-X.git && cd Mesen-X && git submodule update --init
       - name: Build libretro core
         shell: msys2 {0}
+        working-directory: Mesen-X
         run: |
-          git clone https://github.com/NovaSquirrel/Mesen-X.git && cd Mesen-X && git submodule update --init
           cd Libretro
           make -j8
           strip -s mesen_libretro.dll
