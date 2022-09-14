@@ -27,7 +27,6 @@ jobs:
             mingw-w64-x86_64-ntldd
             mingw-w64-x86_64-zlib
             mingw-w64-x86_64-pkg-config
-      - uses: actions/checkout@v2
       - name: Checkout source
         run: git clone https://github.com/NovaSquirrel/Mesen-X.git && cd Mesen-X && git submodule update --init
       - name: Build libretro core
