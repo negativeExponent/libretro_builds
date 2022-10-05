@@ -16,7 +16,7 @@ jobs:
 
     steps:
     - name: Install needed packages
-      run: sudo apt install wget git build-essential mingw-w64 mingw-w64-x86-64-dev mingw-w64-tools
+      run: sudo apt install zip git binutils mingw-w64 mingw-w64-x86-64-dev mingw-w64-tools
     - name: Checkout source
       run: git clone https://github.com/negativeExponent/px68k-libretro.git && cd px68k-libretro && git submodule update --init
     - name: Build libretro core

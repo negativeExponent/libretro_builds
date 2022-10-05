@@ -18,15 +18,12 @@ jobs:
         with:
           update: update
           install: >-
-            base-devel
+            binutils
             gcc
-            git
             make
+            git
             zip
             mingw-w64-x86_64-toolchain
-            mingw-w64-x86_64-ntldd
-            mingw-w64-x86_64-zlib
-            mingw-w64-x86_64-pkg-config
       - name: Checkout source
         run: git clone https://github.com/NovaSquirrel/Mesen-X.git && cd Mesen-X && git submodule update --init
       - name: Build libretro core
