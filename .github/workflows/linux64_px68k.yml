@@ -18,6 +18,10 @@ jobs:
       run: sudo apt install wget git build-essential
     - name: Checkout source
       run: git clone https://github.com/negativeExponent/px68k-libretro.git && cd px68k-libretro && git submodule update --init
+    - name: Check gcc version
+      run: |
+        gcc --version
+        g++ --version
     - name: Build libretro core
       working-directory: px68k-libretro
       run: |
