@@ -1,7 +1,7 @@
 name: px68k-libretro Linux x86_64
 
 on:
-  #push:
+  push:
   workflow_dispatch:
   schedule:
     - cron: '0 2 * * *' # run at 2 AM UTC
