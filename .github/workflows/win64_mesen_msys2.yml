@@ -16,7 +16,7 @@ jobs:
     steps:
       - uses: msys2/setup-msys2@v2
         with:
-          update: update
+          update: true
           install: >-
             base-devel
             gcc
