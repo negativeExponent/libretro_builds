@@ -22,7 +22,7 @@ jobs:
     - name: Build libretro core
       working-directory: libretro-fceumm
       run: |
-        make -f Makefile.libretro CC=/usr/bin/x86_64-w64-mingw32-gcc CXX=/usr/bin/x86_64-w64-mingw32-g++ platform=win -j8
+        make -f Makefile.libretro V=1 CC=/usr/bin/x86_64-w64-mingw32-gcc CXX=/usr/bin/x86_64-w64-mingw32-g++ platform=win -j8
         strip -s fceumm_libretro.dll
         zip -9 ../fceumm_libretro.dll.zip fceumm_libretro.dll
     - name: Create new release
