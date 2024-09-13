@@ -1,4 +1,4 @@
-# libretro_builds
+# Libretro Builds
 Automated builds of RetroArch and libretro cores for Windows and Linux 64-bit (and some macOS Intel 64-bit)
 
 | Core Name | Windows | Linux | macOS (Intel) |
