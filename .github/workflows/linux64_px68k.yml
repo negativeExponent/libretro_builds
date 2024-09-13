@@ -26,12 +26,12 @@ jobs:
       working-directory: px68k-libretro
       run: |
         make -j8
-        wget https://raw.githubusercontent.com/libretro/libretro-super/master/retrolink.sh && chmod +x retrolink.sh && ./retrolink.sh px68k_libretro.so
-        zip -9 ../px68k_libretro.so.zip px68k_libretro.so
+        wget https://raw.githubusercontent.com/libretro/libretro-super/master/retrolink.sh && chmod +x retrolink.sh && ./retrolink.sh px68k_next_libretro.so
+        zip -9 ../px68k_next_libretro.so.zip px68k_next_libretro.so
     - name: Create new release
       uses: svenstaro/upload-release-action@v2
       with:
         repo_token: ${{ secrets.GITHUB_TOKEN }}
         tag: Linux_64-bit
-        file: px68k_libretro.so.zip
+        file: px68k_next_libretro.so.zip
         overwrite: true
