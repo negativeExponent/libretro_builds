@@ -26,8 +26,8 @@ jobs:
       working-directory: px68k-libretro
       run: |
         make -j8 MUSASHI=1
-        wget https://raw.githubusercontent.com/libretro/libretro-super/master/retrolink.sh && chmod +x retrolink.sh && ./retrolink.sh px68k_libretro.so
-        zip -9 ../px68k-libretro_musashi_linux-x86_64.zip px68k_libretro.so
+        wget https://raw.githubusercontent.com/libretro/libretro-super/master/retrolink.sh && chmod +x retrolink.sh && ./retrolink.sh px68k_next_libretro.so
+        zip -9 ../px68k-libretro_musashi_linux-x86_64.zip px68k_next_libretro.so
     - name: Create new release
       uses: svenstaro/upload-release-action@v2
       with:

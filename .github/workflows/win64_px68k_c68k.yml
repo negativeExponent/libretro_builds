@@ -27,12 +27,12 @@ jobs:
       working-directory: px68k-libretro
       run: |
         make -f Makefile.libretro CC=/usr/bin/x86_64-w64-mingw32-gcc CXX=/usr/bin/x86_64-w64-mingw32-g++ platform=win -j8 C68K=1
-        strip -s px68k_libretro.dll
-        zip -9 ../px68k-libretro_c68k_windows-x86_64.zip px68k_libretro.dll
+        strip -s px68k_next_libretro.dll
+        zip -9 ../px68k_next_c68k_libretro.dll.zip px68k_next_libretro.dll
     - name: Create new release
       uses: svenstaro/upload-release-action@v2
       with:
         repo_token: ${{ secrets.GITHUB_TOKEN }}
         tag: Windows_64-bit
-        file: px68k-libretro_c68k_windows-x86_64.zip
+        file: px68k_next_c68k_libretro.dll.zip
         overwrite: true
