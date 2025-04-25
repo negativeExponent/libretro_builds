@@ -1,4 +1,4 @@
-name: FCEUmm Next (Libretro)
+name: libretro-fceumm_next
 
 on:
   #push:
