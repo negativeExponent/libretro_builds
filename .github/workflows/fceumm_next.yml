@@ -17,7 +17,7 @@ jobs:
     - name: Install needed packages
       run: sudo apt install wget git build-essential
     - name: Checkout source
-      run: git clone https://github.com/negativeExponent/libretro-fceumm.git libretro-fceumm_next && cd libretro-fceumm_next
+      run: git clone https://github.com/negativeExponent/libretro-fceumm_next.git libretro-fceumm_next && cd libretro-fceumm_next
     - name: Build libretro core
       working-directory: libretro-fceumm_next
       run: |
@@ -40,7 +40,7 @@ jobs:
     - name: Install needed packages
       run: sudo apt install wget git build-essential mingw-w64 mingw-w64-x86-64-dev mingw-w64-tools
     - name: Checkout source
-      run: git clone https://github.com/negativeExponent/libretro-fceumm.git libretro-fceumm_next && cd libretro-fceumm_next
+      run: git clone https://github.com/negativeExponent/libretro-fceumm_next.git libretro-fceumm_next && cd libretro-fceumm_next
     - name: Build libretro core
       working-directory: libretro-fceumm_next
       run: |
